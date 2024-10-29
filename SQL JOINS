@@ -1,0 +1,67 @@
+SQL JOINS
+
+>>>first table name as table_1
+CREATE TABLE IF NOT EXISTS Table_1 (
+    id INT
+);
+
+INSERT INTO Table_1 (id) VALUES (1), (1), (1), (1), (1), (NULL), (NULL);
+
+>>>>2 table name as table_2
+Create Table  if not exists Table_2(
+id INT
+);
+Insert into table_2(id)values(1),(1),(1),(null);
+
+
+Select * from Table_1;
+Select * from Table_2;
+
+
+-- Inner join
+
+Select t.id,b.id
+from Table_1 as t
+Inner join Table_2 as b on t.id=b.id;
+
+ans =15
+
+-- Left join
+
+Select t.id,b.id
+from Table_1 as t
+Left join Table_2 as b on t.id=b.id;
+
+ans=17
+
+-- Right join
+
+Select t.id,b.id
+from Table_1 as t
+right join Table_2 as b on t.id=b.id;
+
+ans=16
+
+-- natural join
+
+Select t.id,b.id
+from Table_1 as t
+natural join Table_2 as b ;
+
+ans=15
+
+-- cross join
+
+Select t.id,b.id
+from Table_1 as t
+cross join Table_2 as b ;
+
+ans=28
+
+-- full join
+
+Select t.id,b.id
+from Table_1 as t
+full join Table_2 as b on t.id=b.id;
+
+ans=18
